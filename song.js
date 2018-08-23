@@ -5,10 +5,15 @@ $(function(){
 		let song = songs.filter(s=>s.id === id)[0]
 		//console.log(songs)
 		console.log(song)
-		let {url,name,lyric} = song  ////应用了对象解构,拿到song的url
+		let {url,name,lyric,cover,page} = song  ////应用了对象解构,拿到song的url
 		initPlayer.call(undefined,url)
 		initText(name,lyric)
+		setImg(cover,page)
 	})
+	function setImg(cover,page){
+		$('.cover').attr("src",cover)
+		$('#style').html(`.page::before{background:transparent url(${page}) no-repeat center;}`)
+	}
 	function parseLyric(lyric){
 		let array = lyric.split('\n')
 		let regex = /^\[(.+)\](.*)$/ //以[为开头
@@ -33,6 +38,7 @@ $(function(){
 	function initPlayer(url){
 		let audio = document.createElement('audio')
 	    audio.src = url
+
 	    audio.oncanplay = function(){
 	    	audio.play()
 	    	$('.disc-container').addClass('playing')//播放时加上动画
@@ -43,6 +49,14 @@ $(function(){
 	    })
 	    $('.icon-pause').on('click', function(){
 	    	audio.pause()
+	    	let iTransform = $('.disc-container .cover').css("transform")
+	    	let cTransform = $('.disc-container .disc').css("transform")	    	
+	    	if(cTransform === 'none'){
+	    		$('.disc-container .disc').css({transform:iTransform}) 
+	    	}else{
+	    	    $('.disc-container .disc').css({transform:iTransform.concat('',cTransform)})	    		
+	    	}
+	    	
 	    	$('.disc-container').removeClass('playing')//播放时加上动画
 	    })
 	    setInterval(()=>{

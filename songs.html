@@ -5,23 +5,24 @@
 	<title>歌曲播放</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><!-- 加了之后文字不会特别小 -->
 	<link rel="stylesheet" href="./style/song.css">
+	<style id="style"></style>
 </head>
 <body>
     <div class="page">
     	<div class="disc-container">
-			<img class="pointer" src="//s3.music.126.net/m/s/img/needle-ip6.png?be4ebbeb6befadfcae75ce174e7db862" alt="">			
+			<img class="pointer" src="//s3.music.126.net/m/s/img/needle-ip6.png?be4ebbeb6befadfcae75ce174e7db862" alt="">	
+			<div class="icon-wrapper">
+				<svg class="icon icon-play">
+					<use xlink:href="#icon-play"></use>
+				</svg>
+				<svg class="icon icon-pause">
+					<use xlink:href="#icon-pause"></use>
+				</svg>
+			</div>		
 			<div class="disc">
-				<div class="icon-wrapper">
-					<svg class="icon icon-play">
-						<use xlink:href="#icon-play"></use>
-					</svg>
-					<svg class="icon icon-pause">
-						<use xlink:href="#icon-pause"></use>
-					</svg>
-				</div>
 				<img src="//s3.music.126.net/m/s/img/disc-ip6.png?69796123ad7cfe95781ea38aac8f2d48" alt="" class="ring">
 				<img src="//s3.music.126.net/m/s/img/disc_light-ip6.png?996fc8a2bc62e1ab3f51f135fc459577" alt="" class="light">
-				<img src="//p1.music.126.net/Xp3yNlIGncJe4VVXTKIyaQ==/109951163458709317.webp?imageView&thumbnail=721y721&quality=75&tostatic=0&type=webp" alt="" class="cover">
+				<img src="" alt="" class="cover">
 			</div>
 
 		</div>
@@ -37,7 +38,7 @@
 		</div>
     </div>
     
-    <script src="//at.alicdn.com/t/font_795546_u4ok74ufxfm.js"></script>
+    <script src="//at.alicdn.com/t/font_795546_qslgw84y8bl.js"></script>
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./song.js"></script>
 </body>

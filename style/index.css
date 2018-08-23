@@ -44,7 +44,7 @@ section>h2:first-child{
 	display:flex;
 	text-align:center;
 	align-items: center;
-	border-bottom:1px solid #ccc;
+	border-bottom: 1px solid rgba(0,0,0,.1);
 	font-size:1.1em;
 }
 .siteNav > ol> li{
@@ -62,10 +62,10 @@ section>h2:first-child{
 .siteNav> ol >li.active>span::before{
 	content:'';
 	position:absolute;
-	bottom: 0;
-	border-top:2px solid #D33A31;
-	left:-1vw;
-	right:-1vw;/*底下横线长于字的大小*/
+	bottom: -1px;
+	border-top:3px solid #D33A31;
+	left:-1.4vw;
+	right:-1.4vw;/*底下横线长于字的大小*/
 }
 /*歌单*/
 .playlists{
@@ -78,7 +78,8 @@ section>h2:first-child{
 	font-size:0.93em;
 }
 .playlists >ul >li{
-	width:calc(33.3333333% - 1vw);/*css3四则运算*/
+	width:calc(33.3333333% - .6vw);/*css3四则运算*/
+	padding-bottom: 16px;
 }
 .playlists >ul img{
 	width:100%;
@@ -92,6 +93,7 @@ section>h2:first-child{
 	-webkit-box-orient:vertical;
 	overflow:hidden;
 	text-overflow:ellipsis;
+	font-size:13px;
 }
 
 
@@ -111,7 +113,7 @@ section>h2:first-child{
 	color:inherit;
 }
 .latestMusic >ol >li h3{
-	font-size:4.53vw;
+	font-size:3.5vw;
 }
 .latestMusic >ol >li p{
 	margin-top:2vw;
@@ -120,10 +122,11 @@ section>h2:first-child{
 	line-height:1;
 	display:flex;
 	align-items: center;
+	display: inline-block;
 }
 .latestMusic >ol >li svg.play{
-	width:8.5vw;
-	height:8.5vw;
+	width:7.8vw;
+	height:7.8vw;
 	position:absolute;
 	right:4vw;
 	top:50%;
@@ -133,8 +136,9 @@ section>h2:first-child{
 .latestMusic >ol >li svg.sq{
 	width:3.3vw;
 	height:3.3vw;
-	margin-right:0.5em;
+	margin-right:0.1em;
 	fill:#FE672E;
+	vertical-align: middle;
 }
 
 
@@ -176,3 +180,138 @@ section.art .copyright{
 /*切换*/
 .tabContent > li {display: none}
 .tabContent > li.active{display: block;}
+
+.hot .hotop{
+	position:relative;
+	padding-top: 38.9%;
+	overflow: hidden;
+	background:url(https://s3.music.126.net/m/s/img/hot_music_bg_2x.jpg?f01a252389c26bcf016816242eaa6aee) no-repeat;
+	background-size: contain;
+}
+.hot .hotopct{
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	padding-left:24px;
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.hot .hoticon{
+	background: url(https://s3.music.126.net/m/s/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880) no-repeat;
+	background-size:166px 97px;
+	width:142px;
+	height:67px;
+	background-position: -24px -30px;	
+}
+.hotMusic >ol{
+	padding-left:calc(2.6vw + 2px);
+}
+.hotMusic p{
+	text-align:center; /*svg为inline-block元素*/
+}
+.hotMusic >ol >li{
+	padding:2vw 0;
+	position:relative;
+}
+.hotMusic >ol >li a{
+	text-decoration:none;
+	color:inherit;
+	display: flex;
+}
+.hotMusic >ol >li .cred{
+	color:#999;
+	width:28px;
+	display: flex;
+	align-items: center;
+	font-size:17px;
+}
+.rank{
+	color:#df3436;
+	width:28px;
+	display: flex;
+	align-items: center;
+	font-size:17px;
+}
+.hotMusic >ol >li h3{
+	font-size:3.5vw;
+}
+.hotMusic >ol >li p{
+	margin-top:2vw;
+	font-size: 2.8vw;
+	color:#888;
+	line-height:1;
+	display:flex;
+	align-items: center;
+	display: inline-block;
+}
+.hotMusic >ol >li svg.play{
+	width:7.8vw;
+	height:7.8vw;
+	position:absolute;
+	right:4vw;
+	top:50%;
+	transform:translateY(-50%);
+	fill:#AAAAAA;
+}
+.hotMusic >ol >li svg.sq{
+	width:3.3vw;
+	height:3.3vw;
+	margin-right:0.1em;
+	fill:#FE672E;
+	vertical-align: middle;
+}
+
+/*搜索*/
+.input{
+	padding:15px 10px;
+	border-bottom:1px solid rgba(0,0,0,.1);
+}
+.input-cover{
+	position:relative;
+	width:100%;
+	height:30px;
+	padding:0 30px;
+	background: #ebecec;
+	border-radius: 30px;
+}
+.input-cover #searchSong{
+	width:100%;
+	height:30px;
+	line-height:18px;
+	background: transparent;
+	color:#333;
+	font-size:14px;
+	outline:none;
+	border:0;
+}
+.input-cover .holder{
+	position: absolute;
+	left:30px;
+	top:5px;
+	font-size:14px;
+	color:#c9c9c9;
+	background: transparent;
+	pointer-events: none;
+	cursor:default;
+}
+.input-cover .icon-tubiao{
+	position:absolute;
+	left:0;
+	top:9px;
+	margin:0 8px;
+	vertical-align: middle;
+	width:13px;
+	height:13px;
+	fill:#c9c9c9;
+}
+.recom .title{
+	height: 50px;
+    margin-top: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    line-height: 50px;
+    color: #507daf;
+}

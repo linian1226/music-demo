@@ -13,10 +13,19 @@ a{text-decoration:none;}
 .page{
 	display:flex;
 	flex-direction:column;
-	height:100vh;
-	background:transparent url(https://p4.music.126.net/TEJTGL6hBEYOZBUljdf6Kg==/109951163461524854.jpg) no-repeat center;/*背景透明*/
-	background-size:cover;
 }
+.page::before{
+	content:'';
+	height:100vh;
+	width:100vw;	
+	background-size:cover;
+	position:absolute;
+	filter:blur(60px) brightness(.2);/*虚化图片，并变暗*/
+	z-index: -1;
+	left:0;
+	top:0;
+}
+
 
 .disc-container{
     position:relative;
@@ -36,26 +45,27 @@ a{text-decoration:none;}
 }
 .disc-container .ring{
 	width:72vw;	
-
 }
 .disc-container .light{
 	width:72vw;
-	position:absolute;
-	animation:circle 20s infinite linear;
-	animation-play-state:paused;
+	position:absolute;	
 }
 .disc-container .cover{
 	width:44.5vw;
 	position:absolute;
-	border-radius:50%;
-	animation:circle 20s infinite linear;
-	animation-play-state:paused;
+	border-radius:50%;	
 }
 .disc-container.playing .light,
 .disc-container.playing .cover{
-	/*当音乐播放时，开始转动，给其添加一个play*/
-	animation-play-state:running/*无限循环，线性的*/
+	animation:circle 20s infinite linear;
 }
+/*
+.disc-container.playing .light,
+.disc-container.playing .cover{
+	当音乐播放时，开始转动，给其添加一个play
+	animation-play-state:running无限循环，线性的
+}
+*/
 
 /*暂停播放*/
 .disc-container .icon-wrapper{
@@ -72,6 +82,7 @@ a{text-decoration:none;}
     left:50%;
     top:50%;
     transform:translate(-50%,-50%);
+    margin-top:7.8vw;
 }
 .disc-container .icon{
 	fill:white;
@@ -93,13 +104,13 @@ a{text-decoration:none;}
 	color:#AEABAC;
 	text-align:center;
 	line-height:2;
-	margin-top:20px;
+	margin-top:5vw;
 }
 .song-description .lines{
 	transition:transform 0.3s;
 }
 .song-description .lyric{
-	height:72px;
+	height:90px;
 	overflow: hidden;
 }
 .song-description h1{
@@ -107,8 +118,8 @@ a{text-decoration:none;}
 	font-size:18px;
 }
 .song-description p{
-	font-size: 14px;/*页面默认16px*/
-	line-height:24px;
+	font-size: 16px;/*页面默认16px*/
+	line-height:30px;
 }
 .song-description p.active{
 	color:white;
@@ -116,20 +127,26 @@ a{text-decoration:none;}
 
 /*底部的链接*/
 .page > .links{
+	position: absolute;
+	left:0;
+	right:0;
+	bottom:10px;
 	display:flex;
 	justify-content:center;
 	align-content: center;
 	color:#D43B32;
 }
 .page > .links >a{
-	width:38.5vw;
-	margin:1em;
+	width:44vw;
+	margin:2vw;
 	text-align:center;
 	border:1px solid #D43B32;
-	padding:1.5vw;
 	color:inherit; /*颜色继承父级*/
 	letter-spacing:1vw;/*字体间距*/
-	border-radius:1.3vw;
+	border-radius:5vw;
+	height:10vw;
+	line-height:10vw;
+	font-size:18px;
 }
 .page> .links >a.main{
 	background:#D43B32;

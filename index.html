@@ -73,13 +73,22 @@
 			</p>
 		</li>	
 		<li>
-			<p id="tab3Loading">
-				<img src="./images/loading.gif" alt="">
-			</p>
-			<input type="text" style="border:1px solid red">
+			<form action="#" class="input">
+				<div class="input-cover">
+					<svg class="icon-tubiao">
+						<use xlink:href="#icon-tubiao"></use>
+					</svg>
+					<input type="text" id="searchSong">
+					<label for="" class="holder">搜索歌曲、歌手、专辑</label>
+				    <div class="recom">
+				    	<h3 class="title" id="output"></h3>
+				    </div>
+				</div>
+				
+			</form>
 		</li>	
 	</ol>
-	<script src="//at.alicdn.com/t/font_795546_u4ok74ufxfm.js"></script>
+	<script src="//at.alicdn.com/t/font_795546_qslgw84y8bl.js"></script>
 	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./index.js"></script>
 </body>
