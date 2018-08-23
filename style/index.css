@@ -180,7 +180,9 @@ section.art .copyright{
 /*切换*/
 .tabContent > li {display: none}
 .tabContent > li.active{display: block;}
-
+#tab2Loading{
+	text-align:center;
+}
 .hot .hotop{
 	position:relative;
 	padding-top: 38.9%;
