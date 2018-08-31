@@ -79,7 +79,7 @@ section>h2:first-child{
 }
 .playlists >ul >li{
 	width:calc(33.3333333% - .6vw);/*css3四则运算*/
-	padding-bottom: 16px;
+	padding-bottom: 3.2vw;
 }
 .playlists >ul img{
 	width:100%;
@@ -93,7 +93,7 @@ section>h2:first-child{
 	-webkit-box-orient:vertical;
 	overflow:hidden;
 	text-overflow:ellipsis;
-	font-size:13px;
+	font-size:3vw;
 }
 
 
